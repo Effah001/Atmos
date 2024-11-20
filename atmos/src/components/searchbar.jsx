@@ -46,7 +46,7 @@ const SearchBar = () => {
             placeholder="Search City" 
             onChange={handleChange} 
             value={search}
-            autofocus
+            autoFocus
             />
         </form>
         </div>
