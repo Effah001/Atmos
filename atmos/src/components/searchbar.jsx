@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import CurrentWeather from "./currentweather";
+import Forecast from "./forecast";
+import Hourlyforecast from "./HourlyForecast";
+import WeatherMap from "./weathermap";
+
 const SearchBar = () => {
     const [search, setSearch] = useState("");
     const [error, setError] = useState(null);
@@ -37,7 +41,7 @@ const SearchBar = () => {
     }, [search, apiKey]);
 
     return (
-        <div className="mt-5 p-6">
+        <div className="p-6">
             {error && <div className="bg-red-500 text-white p-2 rounded mb-4">{error}</div>}
         <div className="flex flex-row gap-x-4">    
             <p className="text-2xl">Weather Forcast</p>
@@ -52,8 +56,14 @@ const SearchBar = () => {
                 />
             </form>
         </div>
-        <div className="mt-4">
-        {weatherData && <CurrentWeather weatherData={weatherData} />}
+         <div className="grid grid-cols-3 mt-5">
+            {weatherData && <CurrentWeather weatherData={weatherData} />}
+            {weatherData && <WeatherMap weatherData={weatherData} />}
+            {weatherData && <Forecast weatherData={weatherData} />}
+            {weatherData && <Forecast weatherData={weatherData} />}
+            <div className="col-span-2">
+                {weatherData && <Hourlyforecast weatherData={weatherData} />}
+            </div>
         </div>
         </div>  
 

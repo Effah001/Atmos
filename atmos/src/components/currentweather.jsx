@@ -26,7 +26,7 @@ const CurrentWeather = ({weatherData}) => {
       });
 
     return (
-        <div className="rounded-lg shadow-xl bg-white/30 w-80 backdrop-blur-md p-5 ">
+        <div className="rounded-lg shadow-xl bg-white/30 w-96 backdrop-blur-md pt-10 pl-10 h-[80%]">
             <p className="text-gray-700 font-bold">Current Weather</p>
             <div className="mb-4 text-gray-800">
                 {localTime} {currentDate}
